@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>Tính lãi suất ngân hàng</title>
+</head>
+<body>
+  <h2>Tính lãi đơn ngân hàng</h2>
+  <button onclick="tinhLai()">Nhập thông tin & Tính lãi</button>
+  <p id="ketQua"></p>
+
+  <script>
+    function tinhLai() {
+      let goc = parseFloat(prompt("Nhập số tiền gốc (triệu đồng):", "50"));
+      let laiSuat = parseFloat(prompt("Nhập lãi suất (%/năm):", "8"));
+      let nam = parseInt(prompt("Nhập số năm (n):", "2"));
+
+      let tienLai1Nam = goc * (laiSuat / 100);
+      let tongTien = goc + nam * tienLai1Nam;
+
+      document.getElementById("ketQua").innerHTML =
+        "Sau " + nam + " năm, số tiền cả gốc lẫn lãi là: <b>" + tongTien + " (triệu đồng)</b>";
+    }
+  </script>
+</body>
+</html>
